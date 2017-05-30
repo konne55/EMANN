@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace EMANeuralNetwerk
 {
     [Serializable]
     public class LearningData
     {
-        float[] inputValues;
-        float[] outputValues;
-        Dictionary<float[], float[]> datasets;
-        int lastDataset = 0;
-        bool isLearningDataSet;
+        public float[] inputValues;
+        public float[] outputValues;
+        public Dictionary<float[], float[]> datasets;
+        public int lastDataset = 0;
+        public bool isLearningDataSet;
 
         public bool IsLearningDataSet { get { return isLearningDataSet; } }
 
@@ -55,5 +57,8 @@ namespace EMANeuralNetwerk
 
         public int AmountLearningDataSets { get { return datasets.Count; } }
         public int LastDataset { get { return lastDataset; } set { lastDataset = value; } }
+
+        
+
     }
 }

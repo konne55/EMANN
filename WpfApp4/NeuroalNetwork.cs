@@ -54,6 +54,7 @@ namespace EMANeuralNetwerk
         public float GlobalErrorAveragePerSet { get { return globalErrorAveragePerSet; } }
         public float Alpha { get { return alpha; } set { alpha = value; } }
         public LearningData LearningData { get { return learningData; } set { this.learningData = value; } }
+        public long Epoch { get; set; }
         // </props>
 
         // <create a Network Template>
@@ -397,7 +398,6 @@ namespace EMANeuralNetwerk
             }
         }
 
-
         public void backPropagate()
         {
             float[] OutputDataSet = learningData.GetNewOutputDataset();
@@ -446,6 +446,11 @@ namespace EMANeuralNetwerk
             learningData.DataSetMoveNext();
         }
 
+        public void NextEpoch()
+        {
+            Epoch++;
+        }
+
         // <Print the basic Networkstats for ex. the ConsoleApp>
         public string printNetworkStats()
         {
@@ -460,17 +465,8 @@ namespace EMANeuralNetwerk
         // ###############  SERIALIZATION ################
         // ###############################################
 
-        public void saveNetwork(string FileName)
-        {
-            using ( FileStream stream = new FileStream(FileName, FileMode.Create))
-            {
-                var xml = new XmlSerializer(this.GetType());
-                {
-                    xml.Serialize (stream, this);
-                }
-            }
-        }
 
+            // TUT NOCH NICHT!!!
         public void saveSynapses(string FileName)
         {
             using (FileStream stream = new FileStream(FileName, FileMode.Create))
@@ -478,6 +474,18 @@ namespace EMANeuralNetwerk
                 var xml = new XmlSerializer(this.allSynapses.GetType ());
                 {
                    xml.Serialize(stream, this.AllSynapses );
+                }
+            }
+        }
+
+
+        public void saveLearningData(string FileName)
+        {
+            using (FileStream stream = new FileStream(FileName, FileMode.Create))
+            {
+                var xml = new XmlSerializer(typeof(LearningData));
+                {
+                    xml.Serialize(stream, LearningData  );
                 }
             }
         }

@@ -40,7 +40,6 @@ namespace EMANeuralNetwerk
 
         long start;
         long diff;
-        long Epoch;
 
         LearningData learningData = new LearningData();
         DrawNN drawNN;
@@ -135,7 +134,7 @@ namespace EMANeuralNetwerk
 
                 // <print calculations-Info>
                 calcDuration.Text = diff.ToString();
-                amountCalcs.Text = Epoch.ToString();
+                amountCalcs.Text = nn.Epoch.ToString();
                 // </print calculation-Info>
             }
 
@@ -150,7 +149,7 @@ namespace EMANeuralNetwerk
             nn.backPropagate();
             nn.calculateGlobalOutputError();
             nn.nextDataSet();
-            Epoch++;
+            nn.NextEpoch();
             
         }
         public void trainNN()
