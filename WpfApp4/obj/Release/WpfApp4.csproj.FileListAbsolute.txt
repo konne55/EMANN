@@ -1,0 +1,14 @@
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\bin\Release\EMANN.exe.config
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\bin\Release\EMANN.exe
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\bin\Release\EMANN.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\WpfApp4.csprojResolveAssemblyReference.cache
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\MainWindow.g.cs
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\App.g.cs
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN_MarkupCompile.cache
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN_MarkupCompile.lref
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\MainWindow.baml
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN.g.resources
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANeuralNetwerk.Properties.Resources.resources
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\WpfApp4.csproj.GenerateResource.Cache
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN.exe
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN.pdb
