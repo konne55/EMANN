@@ -66,7 +66,7 @@ namespace EMANeuralNetwerk
                 elli.Fill = Brushes.CornflowerBlue;
                 }
 
-                double radius = 40 + 10 * iN.Value;
+                double radius = 40 + 10 * iN.Value; // Geht nut anständig wenn sigmoid - sollte ich noch abfangen
                 elli.Height = radius ;
                 elli.Width = radius ;
                 elli.Tag = iN;
@@ -162,10 +162,10 @@ namespace EMANeuralNetwerk
                     elli.Fill = Brushes.Aquamarine;
                 }
 
-                
 
 
-                double radius = 40 + 20 * oN.Value;
+
+                double radius = 40 + 20 * oN.Value; // Geht nut anständig wenn sigmoid - sollte ich noch abfangen
                 elli.Height = radius;
                 elli.Width = radius;
                 elli.Tag = oN;
@@ -219,7 +219,7 @@ namespace EMANeuralNetwerk
             foreach (Synapse s in nn.AllSynapses )
             {
                 Line line = new Line();
-                line.StrokeThickness = 1+ Math.Abs ( s.Weight )* 2;
+                line.StrokeThickness = 1 + Math.Abs ( s.Weight )* 2;
                 line.Opacity = 0.5;
                 line.ToolTip = "Gewicht: "+ s.Weight.ToString();
 

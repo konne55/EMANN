@@ -68,7 +68,7 @@ namespace EMANeuralNetwerk
             if (f == enmFireFunctions.sigmoid)
             {
                 Value = new FireFunc().Sigmoid(inputValue);
-                derivative = value - (value * value);
+                derivative = value * (1 - value);
             }
             else if (f == enmFireFunctions.identity)
             {
@@ -78,7 +78,15 @@ namespace EMANeuralNetwerk
             else if (f == enmFireFunctions.positivIdentity)
             {
                 Value = new FireFunc().positiveIdentity(inputValue);
-                derivative = 1;
+                if (inputValue < 0)
+                {
+                    derivative = 0;
+                }
+                else
+                {
+                    derivative = 1;
+                }
+
             }
         }
 

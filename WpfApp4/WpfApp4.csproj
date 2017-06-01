@@ -60,6 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="DrawNN.cs" />
     <Compile Include="FireFunctions.cs" />
+    <Compile Include="GraphXY.cs" />
     <Compile Include="HiddenNeuron.cs" />
     <Compile Include="InputNeuron.cs" />
     <Compile Include="learningData.cs" />

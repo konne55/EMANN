@@ -104,12 +104,12 @@ namespace EMANeuralNetwerk
         // </ add single Input Neuron>
 
         // <add single Output Neuron>
-        public void addOutputNeurons(int amountNeurons)
+        public void addOutputNeurons(int amountNeurons, Neuron.enmFireFunctions ActivationFunction )
         {
             for (int i = 0; i < amountNeurons ; i++)
             {
                 OutputNeuron oN = new OutputNeuron();
-                oN.FireFunc = Neuron.enmFireFunctions.sigmoid    ;
+                oN.FireFunc = ActivationFunction;
                 outputNeuronen.Add(oN);
                 neurons.Add(oN);
             }

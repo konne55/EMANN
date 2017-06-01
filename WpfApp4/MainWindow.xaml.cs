@@ -37,6 +37,7 @@ namespace EMANeuralNetwerk
         float[] result;
         Thread cNNThread;
         SerializeData sdNetwork;
+        GraphXY errorGraph;
 
         long start;
         long diff;
@@ -55,7 +56,7 @@ namespace EMANeuralNetwerk
 
             //Updated die GUI
             DispatcherTimer dpTimer = new DispatcherTimer();
-            dpTimer.Interval = TimeSpan.FromSeconds  (0.0416);
+            dpTimer.Interval = TimeSpan.FromSeconds  (0.015);
             dpTimer.Tick += DpTimer_Tick;
             dpTimer.Start ();
 
@@ -63,6 +64,7 @@ namespace EMANeuralNetwerk
             result = new float[0];
             nn = new NeuronalNetwork();
             drawNN = new DrawNN(drawArea);
+            errorGraph = new GraphXY(drawErrorGraph, "Fehlerentwicklung", " Anzahl Epochs", "Fehler");
         }
 
         // <activationFunctions for Timer>
@@ -136,10 +138,11 @@ namespace EMANeuralNetwerk
                 calcDuration.Text = diff.ToString();
                 amountCalcs.Text = nn.Epoch.ToString();
                 // </print calculation-Info>
+
+
             }
 
         }
-
         public void calculateOneStepOfNN()
         {
             
@@ -167,7 +170,8 @@ namespace EMANeuralNetwerk
             nn = new NeuronalNetwork();
             // <Net-Dimensions>
             nn.addInputNeurons(int.Parse (txtbxAmountInputNeurons.Text ));
-            nn.addOutputNeurons(int.Parse (txtbxAmountOutputNeurons.Text ));
+            nn.addOutputNeurons(int.Parse (txtbxAmountOutputNeurons.Text ), Neuron.enmFireFunctions.sigmoid);
+            
             for (int i = 0; i < int.Parse (txtbxAmountHiddenLayer.Text); i++)
             {
                 nn.addHiddenLayer(int.Parse(txtbxAmountHiddenNeurons.Text), i);
