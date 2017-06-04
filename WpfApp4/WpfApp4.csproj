@@ -58,17 +58,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CreateNetwork.xaml.cs">
+      <DependentUpon>CreateNetwork.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DrawNN.cs" />
     <Compile Include="FireFunctions.cs" />
     <Compile Include="GraphXY.cs" />
     <Compile Include="HiddenNeuron.cs" />
     <Compile Include="InputNeuron.cs" />
     <Compile Include="learningData.cs" />
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NeuroalNetwork.cs" />
     <Compile Include="NeuronInformation.cs" />
     <Compile Include="OutputNeuron.cs" />
     <Compile Include="SerializeData.cs" />
     <Compile Include="Synapse.cs" />
+    <Page Include="CreateNetwork.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="nfc_n_100_gEp_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="img\emaNN_Intro.png" />
+    <Resource Include="img\redes-neuronales2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

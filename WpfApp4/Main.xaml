@@ -1,0 +1,108 @@
+﻿<Window x:Class="EMANeuralNetwerk.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EMANeuralNetwerk"
+        mc:Ignorable="d"
+        Title="emaNN" FontWeight="Light" Foreground="#FF00AEFF" Width="1920" Height="1080" Icon="nfc_n_100_gEp_icon.ico" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="413*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="961*"/>
+            <RowDefinition Height="65*"/>
+        </Grid.RowDefinitions>
+
+
+            <TabControl x:Name="MainTabControl" Grid.Column="1"  Grid.Row="1" ItemsSource="{Binding Tabs}">
+                <TabControl.ItemTemplate>
+                    <!-- this is the header template-->
+                    <DataTemplate>
+                        <TextBlock
+                    Text="{Binding Name}" />
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+                <TabControl.ContentTemplate>
+                    <!-- this is the body of the TabItem template-->
+                    <DataTemplate>
+                    <!-- <TextBlock Text="{Binding Epoch}" />-->
+                    <Grid>
+                        <Grid.RowDefinitions >
+                            <RowDefinition Height="60*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Graphen -->
+                        <TabControl Grid.Row="0" Grid.Column="0">
+                            <TabItem Header="Fehlergraph">
+                                <Canvas Name="errorGraph" Background="AntiqueWhite" >
+                                    <TextBlock Text="{Binding Name}"/>
+                                </Canvas>
+                            </TabItem>
+                            <TabItem Header="Lernrate">
+                                <Canvas Name="alphaGraph" Background="AliceBlue" />
+                            </TabItem>
+                        </TabControl>
+                        <!-- /Graphen-->
+                        
+                        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" >
+                            <TextBlock Text="Globaler Fehler: "/>
+                            <TextBlock Text="Aktuelle Lernrate:  "/>
+                            <Slider Minimum="0.0001" Maximum="1.5" Value=" 0.5"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row=" 2" Grid.Column="0">
+                            <TextBlock Text="Netzkonfiguration: "/>
+                            <TextBlock Text="Evolutionsstufe: "/>
+                        </StackPanel>
+                        
+                        <Canvas Grid.Row=" 0" Grid.RowSpan="3" Grid.Column=" 1" Background="WhiteSmoke" ></Canvas>
+                    </Grid>
+
+                    
+                </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
+
+
+
+
+
+       
+
+        <ToolBar Grid.Column="1" HorizontalAlignment="Left" >
+            <MenuItem Width="25">
+                <MenuItem.Icon>
+                    <Image Source="img/neuron.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Width="25" >
+                <MenuItem.Icon>
+                    <Image Source="img/synapse.png" />
+                </MenuItem.Icon>
+            </MenuItem>
+        </ToolBar>
+
+        <ListView  Grid.Row="1" Name="listBoxNetworks" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding Epoch}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="591,2,0,0" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>

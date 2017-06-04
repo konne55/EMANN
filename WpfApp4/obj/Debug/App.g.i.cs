@@ -61,6 +61,8 @@ namespace EMANeuralNetwerk {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
+            SplashScreen splashScreen = new SplashScreen("img/emann_intro.png");
+            splashScreen.Show(true);
             EMANeuralNetwerk.App app = new EMANeuralNetwerk.App();
             app.InitializeComponent();
             app.Run();

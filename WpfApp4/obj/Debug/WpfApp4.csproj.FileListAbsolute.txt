@@ -12,3 +12,7 @@ C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\E
 C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\EMANeuralNetwerk.Properties.Resources.resources
 C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\EMANN.exe
 C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\EMANN.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\Main.g.cs
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\Main.baml
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\CreateNetwork.g.cs
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Debug\CreateNetwork.baml

@@ -25,6 +25,8 @@ namespace EMANeuralNetwerk
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        
         NeuronalNetwork nn;
         System.Timers.Timer updateTick;
         bool isNetworkInitialized;
@@ -64,7 +66,7 @@ namespace EMANeuralNetwerk
             result = new float[0];
             nn = new NeuronalNetwork();
             drawNN = new DrawNN(drawArea);
-            errorGraph = new GraphXY(drawErrorGraph, "Fehlerentwicklung", " Anzahl Epochs", "Fehler");
+            errorGraph = new GraphXY(GraphError, "Fehlerentwicklung", " Anzahl Epochs", "Fehler");
         }
 
         // <activationFunctions for Timer>
@@ -339,6 +341,14 @@ namespace EMANeuralNetwerk
             isNetworkInitialized = true;
             Array.Resize(ref result, nn.GetAmountOutputNeurons);
             }
+        }
+
+        private void btnShowNetGenerator(object sender, RoutedEventArgs e)
+        {
+            NetGenerator ng = new NetGenerator();
+            ng.Show();
+
+
         }
         // </load Network>
 

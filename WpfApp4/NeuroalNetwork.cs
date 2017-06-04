@@ -55,6 +55,7 @@ namespace EMANeuralNetwerk
         public float Alpha { get { return alpha; } set { alpha = value; } }
         public LearningData LearningData { get { return learningData; } set { this.learningData = value; } }
         public long Epoch { get; set; }
+        public String Name { get; set; }
         // </props>
 
         // <create a Network Template>
@@ -406,7 +407,7 @@ namespace EMANeuralNetwerk
             foreach (OutputNeuron oN in outputNeuronen )
             {
                 // delta Errechnen
-                oN.DeltaE = oN.Derivative * ( oN.Value - OutputDataSet[i++]);
+                oN.DeltaE = oN.Derivative * (oN.Value - OutputDataSet[i++]);
                 foreach (Synapse s in oN.SenderSynapsen )
                 {
                     s.Delta = oN.DeltaE * s.FarestNeuron.Value * alpha;

@@ -12,3 +12,4 @@ C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release
 C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\WpfApp4.csproj.GenerateResource.Cache
 C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN.exe
 C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\EMANN.pdb
+C:\Users\Admin\documents\visual studio 2017\Projects\WpfApp4\WpfApp4\obj\Release\MainWindow2.g.cs
